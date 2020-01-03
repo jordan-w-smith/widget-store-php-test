@@ -1,7 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require('./Order.php');
+require('../Order.php');
 
 class OrderTest extends TestCase {
     public function testHasOrderSize() {
