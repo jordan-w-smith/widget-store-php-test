@@ -1,0 +1,13 @@
+{
+    "name": "codeclan/stickee_test",
+    "authors": [
+        {
+            "name": "Jordan Smith",
+            "email": "jordsmithy@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    }
+}
