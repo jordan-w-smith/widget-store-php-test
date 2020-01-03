@@ -9,5 +9,4 @@ class OrderTest extends TestCase {
         $this->assertSame(5, $order1->getOrderCount());
     }
 }
-
 ?>
