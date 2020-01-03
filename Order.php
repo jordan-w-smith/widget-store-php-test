@@ -3,7 +3,11 @@
 class Order {
     public $orderSize;
 
-    function get_order_size() {
+    function __construct ($orderSize) {
+        $this->orderSize = $orderSize;
+    }
+
+    function getOrderCount() {
         return $this->orderSize;
     }
 }
