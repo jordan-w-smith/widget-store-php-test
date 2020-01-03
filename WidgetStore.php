@@ -1,5 +1,7 @@
 <?php
 
+require('./Order.php');
+
 class WidgetStore {
     public $stockCount;
 
@@ -9,6 +11,10 @@ class WidgetStore {
 
     function getStockCount() {
         return $this->stockCount;
+    }
+
+    function processOrder($orderQuantity) {
+        $this->stockCount = $this->stockCount - $orderQuantity;
     }
 }
 
