@@ -17,38 +17,34 @@ class OrderCalculator {
         $packsToSend = array();
         while ($unitsLeftToCount > 0) {
             if ($unitsLeftToCount >= 5000) {
-                print "pack5: ";
-                array_push($packsToSend, $this->pack5);
+                array_push($packsToSend, $this->pack5->packName);
                 $unitsLeftToCount -= 5000;
             }
             elseif ($unitsLeftToCount >= 2000) {
-                print "pack4: ";
-                array_push($packsToSend, $this->pack4);
+                array_push($packsToSend, $this->pack4->packName);
                 $unitsLeftToCount -= 2000;
             }
             elseif ($unitsLeftToCount >= 1000) {
-                print "pack3: ";
-                array_push($packsToSend, $this->pack3);
+                array_push($packsToSend, $this->pack3->packName);
                 $unitsLeftToCount -= 1000;
             }
             elseif ($unitsLeftToCount > 250 && $unitsLeftToCount < 501) {
-                print "pack2: ";
-                array_push($packsToSend, $this->pack2);
+                array_push($packsToSend, $this->pack2->packName);
                 $unitsLeftToCount -= 500;
             }
             elseif ($unitsLeftToCount < 250 && $unitsLeftToCount > 0 || $unitsLeftToCount < 1000 && $unitsLeftToCount > 500) {
-                print "pack1: ";
-                array_push($packsToSend, $this->pack1);
+                array_push($packsToSend, $this->pack1->packName);
                 $unitsLeftToCount -= 250;
             }
-
         }
-        print $unitsLeftToCount;
-        print_r($packsToSend);
+        $values = array_count_values($packsToSend);
+        print_r($values);
+        // print $unitsLeftToCount;
+        // print_r($packsToSend);
     }
 }
 $orderCalculator = new OrderCalculator();
-$order = new Order(251);
+$order = new Order(22091);
 print $orderCalculator->processOrder($order);
 
 ?>
