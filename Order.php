@@ -3,12 +3,12 @@
 class Order {
     public $orderSize;
 
-    function __construct ($orderSize) {
-        $this->orderSize = $orderSize;
+    function __construct ($unitsOrdered) {
+        $this->unitsOrdered = $unitsOrdered;
     }
 
-    function getOrderCount() {
-        return $this->orderSize;
+    function getUnitsOrdered() {
+        return $this->unitsOrdered;
     }
 }
 

@@ -1,12 +1,12 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require('../Order.php');
+require('../stickee_test/Order.php');
 
 class OrderTest extends TestCase {
-    public function testHasOrderSize() {
+    public function testHasOrderUnitCount() {
         $order1 = new Order(5);
-        $this->assertSame(5, $order1->getOrderCount());
+        $this->assertSame(5, $order1->getUnitsOrdered());
     }
 }
 ?>
