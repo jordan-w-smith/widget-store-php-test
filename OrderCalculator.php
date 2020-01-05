@@ -53,8 +53,8 @@ class OrderCalculator {
         // print_r($packsToSend);
     }
 }
-$orderCalculator = new OrderCalculator();
-$order = new Order(22091);
-print_r($orderCalculator->processOrder($order));
+// $orderCalculator = new OrderCalculator();
+// $order = new Order(22091);
+// print_r($orderCalculator->processOrder($order));
 
 ?>
