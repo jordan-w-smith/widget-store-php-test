@@ -1,29 +1,12 @@
 <?php
-require('../stickee_test/models/OrderCalculator.php');
-$quantity = 0;
-$results = "";
-if ($_POST) {
-    $quantity = $_POST['quantity'];
-    $orderCalculator2 = new OrderCalculator();
-    $order2 = new Order($quantity);
-    $results = $orderCalculator2->processOrder($order2);
-}
-
-$resultKey = "";
-$resultValue = "";
-
-function getResults($results) {
-    if ($_POST) {
-        foreach ($results as $key => $value) {
-            print '<tr><td>' . $key . '</td><td>' . $value . '</td></tr>';
-        }
-    }
-}
-
+require('process_request.php')
 ?>
 
 <head>
     <title>Stickee Test</title>
+    <style>
+        table, td {border: 1px solid black; text-align: center; padding: 5px;}
+    </style>
 </head>
 
 <body>
