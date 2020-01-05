@@ -1,7 +1,7 @@
 <?php
 
-require('./Order.php');
-require('./Pack.php');
+require('./models/Order.php');
+require('./models/Pack.php');
 
 class OrderCalculator {
     function __construct () {

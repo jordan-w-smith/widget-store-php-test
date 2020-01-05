@@ -1,7 +1,8 @@
 <?php
 
 class Order {
-    public $orderSize;
+
+    public $unitsOrdered;
 
     function __construct ($unitsOrdered) {
         $this->unitsOrdered = $unitsOrdered;

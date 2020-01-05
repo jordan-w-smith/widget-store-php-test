@@ -1,5 +1,5 @@
 <?php
-require('./OrderCalculator.php');
+require('../stickee_test/models/OrderCalculator.php');
 $quantity = 0;
 $results = "";
 if ($_POST) {
