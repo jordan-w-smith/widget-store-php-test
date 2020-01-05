@@ -34,7 +34,6 @@ function getResults($results) {
     </form>
     <p>Units Ordered: <?php print $quantity; ?></p>
     <p>packs required: </p>
-    <p><?php print_r($results); ?></p>
     <table>
         <tr>
             <th>Pack</th>

@@ -5,11 +5,11 @@ require('./models/Pack.php');
 
 class OrderCalculator {
     function __construct () {
-        $this->pack1 = new Pack('pack1', 250);
-        $this->pack2 = new Pack('pack2', 500);
-        $this->pack3 = new Pack('pack3', 1000);
-        $this->pack4 = new Pack('pack4', 2000);
-        $this->pack5 = new Pack('pack5', 5000);
+        $this->pack1 = new Pack('pack1 - 250pc', 250);
+        $this->pack2 = new Pack('pack2 - 500pc', 500);
+        $this->pack3 = new Pack('pack3 - 1000pc', 1000);
+        $this->pack4 = new Pack('pack4 - 2000pc', 2000);
+        $this->pack5 = new Pack('pack5 - 5000pc', 5000);
     }
 
     function processOrder($order) {

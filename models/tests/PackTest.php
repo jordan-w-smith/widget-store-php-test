@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-require('../Pack.php');
+require('models/Pack.php');
 
 class PackTest extends TestCase {
     
