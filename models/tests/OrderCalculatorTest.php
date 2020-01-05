@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-require('../stickee_test/OrderCalculator.php');
+require('../OrderCalculator.php');
 
 class OrderCalculatorTest extends TestCase {
     // public function testHasStockCount() {

@@ -11,6 +11,10 @@ class Pack {
     function getPackSize() {
         return $this->packSize;
     }
+
+    function getPackName() {
+        return $this->packName;
+    }
 }
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require('../stickee_test/Order.php');
+require('../Order.php');
 
 class OrderTest extends TestCase {
     public function testHasOrderUnitCount() {
