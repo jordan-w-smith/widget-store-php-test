@@ -12,6 +12,15 @@ class OrderCalculator {
         $this->pack5 = new Pack('pack5', 5000);
     }
 
+    // function execute() {
+    //     if ($POST['quantity']) {
+    //         $quantity=$POST['quantity'];
+    //         $orderCalculator = new OrderCalculator();
+    //         $order = new Order($quantity);
+    //         $results = $orderCalculator->processOrder($order);
+    //     }
+    // }
+
     function processOrder($order) {
         $unitsLeftToCount = $order->getUnitsOrdered();
         $packsToSend = array();
@@ -38,13 +47,14 @@ class OrderCalculator {
             }
         }
         $values = array_count_values($packsToSend);
-        print_r($values);
+        // print_r($values);
+        return $values;
         // print $unitsLeftToCount;
         // print_r($packsToSend);
     }
 }
 $orderCalculator = new OrderCalculator();
 $order = new Order(22091);
-print $orderCalculator->processOrder($order);
+print_r($orderCalculator->processOrder($order));
 
 ?>
