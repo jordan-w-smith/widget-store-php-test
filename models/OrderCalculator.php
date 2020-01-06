@@ -24,7 +24,7 @@ class OrderCalculator {
                 array_push($packsToSend, $this->pack4->packName);
                 $unitsLeftToCount -= 2000;
             }
-            elseif ($unitsLeftToCount >= 1000) {
+            elseif ($unitsLeftToCount > 750) {
                 array_push($packsToSend, $this->pack3->packName);
                 $unitsLeftToCount -= 1000;
             }
@@ -32,7 +32,7 @@ class OrderCalculator {
                 array_push($packsToSend, $this->pack2->packName);
                 $unitsLeftToCount -= 500;
             }
-            elseif ($unitsLeftToCount < 250 && $unitsLeftToCount > 0 || $unitsLeftToCount < 1000 && $unitsLeftToCount > 500) {
+            elseif ($unitsLeftToCount < 250 && $unitsLeftToCount > 0 || $unitsLeftToCount < 751 && $unitsLeftToCount > 500) {
                 array_push($packsToSend, $this->pack1->packName);
                 $unitsLeftToCount -= 250;
             }
