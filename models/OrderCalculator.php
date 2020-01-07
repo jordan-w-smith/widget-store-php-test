@@ -16,11 +16,11 @@ class OrderCalculator {
         $unitsLeftToCount = $order->getUnitsOrdered();
         $packsToSend = array();
         while ($unitsLeftToCount > 0) {
-            if ($unitsLeftToCount >= 5000) {
+            if ($unitsLeftToCount > 4750) {
                 array_push($packsToSend, $this->pack5->packName);
                 $unitsLeftToCount -= 5000;
             }
-            elseif ($unitsLeftToCount >= 2000) {
+            elseif ($unitsLeftToCount > 1750) {
                 array_push($packsToSend, $this->pack4->packName);
                 $unitsLeftToCount -= 2000;
             }
