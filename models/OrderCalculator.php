@@ -43,28 +43,41 @@ class OrderCalculator {
         // }
 
     function processOrder($order) {
-        $sortedPacks = array();
+        // $sortedPacks = array();
+        $unitsLeftToCount = $order->getUnitsOrdered();
         $packsToSend = array();
         print_r($this->packs);
-        array_push(arsort($this->packs), $sortedPacks);
+        arsort($this->packs);
+        $sortedPacks = $this->packs;
         print_r($this->packs);
-        print_r('sorted packs' . $sortedPacks);
-        $unitsLeftToCount = $order->getUnitsOrdered();
+        print '    break line     ';
+        print_r($sortedPacks[0]->packSize);
+
+        $array = array_values($sortedPacks);
+        // print_r('sorted packs' . $sortedPacks);
+        
         while ($unitsLeftToCount > 0) {
             foreach ($this->packs as $pack) {
-                if ($unitsLeftToCount >= $pack->packSize) {
-                    array_push($packsToSend, $pack->packName);
-                    $unitsLeftToCount -= $pack->packSize;
+                while($unitsLeftToCount >= 0) {
+                    if ($unitsLeftToCount <= $sortedPacks[0]->packSize && $pack->packSize <= $sortedPacks[0]->packSize){
+                        print 'less than 250';
+                        array_push($packsToSend, $pack->packName);
+                        $unitsLeftToCount -= $pack->packSize;
+                        print 'units left to count' . $unitsLeftToCount;
+                    break;
+                    }
+                    elseif($unitsLeftToCount > $pack->packSize) {
+                        print " if";
+                        print $pack->packSize;
+                        array_push($packsToSend, $pack->packName);
+                        $unitsLeftToCount -= $pack->packSize;
+                        break;
+                    }
+                    else {
+                    break;
+                    }
                 }
-                // elseif ($unitsLeftToCount >= $pack->packSize) {
-                //     array_push($packsToSend, $pack->packName);
-                //     $unitsLeftToCount -= $pack->packSize;
-                // }
-                else {
-                break;  
-                }  
-            };
-        break;
+            }
         }
 
         $values = array_count_values($packsToSend);
