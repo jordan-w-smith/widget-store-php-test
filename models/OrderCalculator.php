@@ -56,29 +56,32 @@ class OrderCalculator {
         $array = array_values($sortedPacks);
         // print_r('sorted packs' . $sortedPacks);
         
-        while ($unitsLeftToCount > 0) {
+        // while ($unitsLeftToCount > 0) {
             foreach ($this->packs as $pack) {
-                while($unitsLeftToCount >= 0) {
-                    if ($unitsLeftToCount <= $sortedPacks[0]->packSize && $pack->packSize <= $sortedPacks[0]->packSize){
-                        print 'less than 250';
+                while($unitsLeftToCount > 0) {
+                    if ($unitsLeftToCount <= $sortedPacks[0]->packSize && $pack->packSize === $sortedPacks[0]->packSize){
+                        // print 'less than 250';
                         array_push($packsToSend, $pack->packName);
                         $unitsLeftToCount -= $pack->packSize;
-                        print 'units left to count' . $unitsLeftToCount;
-                    break;
+                        // print 'units left to count' . $unitsLeftToCount;
+                    // break;
                     }
-                    elseif($unitsLeftToCount > $pack->packSize) {
-                        print " if";
-                        print $pack->packSize;
+                    elseif($unitsLeftToCount >= $pack->packSize) {
+                        // print " if";
+                        // print $pack->packSize;
                         array_push($packsToSend, $pack->packName);
                         $unitsLeftToCount -= $pack->packSize;
-                        break;
+                    // break;
                     }
                     else {
                     break;
                     }
+                // break;
                 }
+            // break;
             }
-        }
+        // break;
+        // }
 
         $values = array_count_values($packsToSend);
         return $values;
